@@ -37,6 +37,7 @@ import LineTableAddress from "@/components/LinearTable/LineTableAddress";
 import LineTableButton from "@/components/LinearTable/LineTableButton";
 
 import { items, dropdowns, maps, buttons } from "@/configs/Info.js";
+import axios from "axios";
 export default {
     components: {
         LineTableItem,
@@ -50,7 +51,13 @@ export default {
             dropdowns,
             maps,
             buttons,
+            hotels: null,
         };
+    },
+    mounted() {
+        axios.get(
+            "https://pk-api.adata.kz/api/v1/data/company/short/?initial=1&id=941240000193"
+        );
     },
 };
 </script>
